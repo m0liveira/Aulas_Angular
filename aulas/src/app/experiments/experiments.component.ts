@@ -1,3 +1,4 @@
+import { R3TargetBinder } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,4 +13,9 @@ export class ExperimentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  name: string = "0liveira";
+
+  changeName(event) {
+    this.name = event.target.value;
+  }
 }
