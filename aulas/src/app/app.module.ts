@@ -8,6 +8,7 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { ReadMeGenComponent } from './read-me-gen/read-me-gen.component';
 import { HomeComponent } from './home/home.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExperimentsComponent } from './experiments/experiments.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

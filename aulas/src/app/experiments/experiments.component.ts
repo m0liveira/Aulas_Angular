@@ -15,7 +15,7 @@ export class ExperimentsComponent implements OnInit {
 
   name: string = "0liveira";
 
-  changeName(event) {
+  changeName(event): any {
     this.name = event.target.value;
   }
 }
