@@ -1,1 +1,9 @@
-<p>calculadora works!</p>
+<body>
+  <p>level 1</p>
+
+  <input type="text" [(ngModel)]="num1" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+  <input type="text" [(ngModel)]="num2" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+  <input type="text" [(ngModel)]="operation" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+
+  <h2>result: {{result}}</h2>
+</body>
