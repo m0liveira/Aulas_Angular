@@ -5,5 +5,27 @@
   <input type="text" [(ngModel)]="num2" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
   <input type="text" [(ngModel)]="operation" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
 
-  <h2>result: {{result}}</h2>
+  <h2>result: {{result2}}</h2>
+
+  <div class="calculator">
+    <h1 class="monitor">{{result}}</h1>
+    <div class="buttonContainer">
+      <button (click)="set7()">7</button>
+      <button (click)="set8()">8</button>
+      <button (click)="set9()">9</button>
+      <button class="operators" (click)="setSplit()">÷</button>
+      <button (click)="set4()">4</button>
+      <button (click)="set5()">5</button>
+      <button (click)="set6()">6</button>
+      <button class="operators" (click)="setMultiply()">×</button>
+      <button (click)="set1()">1</button>
+      <button (click)="set2()">2</button>
+      <button (click)="set3()">3</button>
+      <button class="operators" (click)="setMinus()">-</button>
+      <button class="clear" (click)="clear()">C</button>
+      <button (click)="set0()">0</button>
+      <button class="equal" (click)="doTheMath()">=</button>
+      <button class="operators" (click)="setPlus()">+</button>
+    </div>
+  </div>
 </body>

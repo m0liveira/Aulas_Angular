@@ -10,11 +10,94 @@
   box-sizing: border-box;
   font-family: var(--montserrat);
   outline: none;
-  border: none;
+  /* border: none; */
 }
 
 body {
   width: calc(100vw - (100vw - 100%));
   height: auto;
   padding-top: 7vh;
+}
+
+.calculator {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(27, 27, 49, 0.95);
+  box-shadow: 0px 0px 10px 0px black;
+  border-radius: 15px;
+  width: 23%;
+  height: 65vh;
+}
+
+.calculator .monitor {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(255, 255, 255, 0.01);
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0px 0px 8px 0px #ffffff,
+    inset 0px 39px 56px -36px rgba(255, 255, 255, 0.5),
+    inset 0px 98px 100px -48px rgba(202, 172, 255, 0.3),
+    inset 0px -82px 68px -64px rgba(96, 68, 144, 0.3),
+    inset 0px 1px 40px rgba(227, 222, 255, 0.2),
+    inset 0px 4px 18px rgba(154, 146, 210, 0.3);
+  border-radius: 7px;
+  width: 85%;
+  height: 10%;
+  margin-top: 25px;
+  padding-right: 15px;
+  backdrop-filter: blur(100px);
+}
+
+.calculator .buttonContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 85%;
+  height: calc(90% - 75px);
+  margin-top: 25px;
+}
+
+.calculator .buttonContainer button {
+  background: rgba(255, 255, 255, 0.01);
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0px 0px 8px 0px #ffffff,
+    inset 0px 39px 56px -36px rgba(255, 255, 255, 0.5),
+    inset 0px 98px 100px -48px rgba(202, 172, 255, 0.3),
+    inset 0px -82px 68px -64px rgba(96, 68, 144, 0.3),
+    inset 0px 1px 40px rgba(227, 222, 255, 0.2),
+    inset 0px 4px 18px rgba(154, 146, 210, 0.3);
+  border-radius: 10px;
+  border: none;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: auto;
+  width: calc(100% / 4 - (50px / 4));
+  height: calc(65% / 4);
+  cursor: pointer;
+  transition: font-size 250ms ease, color 250ms ease;
+}
+
+.calculator .buttonContainer .operators {
+  background: rgb(0, 0, 0);
+}
+
+.calculator .buttonContainer .clear {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.calculator .buttonContainer .equal {
+  background: rgba(0, 140, 255, 0.4);
+}
+
+.calculator .buttonContainer button:hover {
+  font-size: 3.5rem;
+  transition: all 250ms ease;
+}
+
+.calculator .buttonContainer button:active {
+  color: rgb(0, 162, 255);
+  text-shadow: 0px 0px 10px #fff;
+  transition: all 250ms ease;
 }
