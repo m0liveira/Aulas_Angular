@@ -12,6 +12,8 @@ export class CalculadoraComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //#region ugly calculator
+  // ugly variables
   num1: number = 0;
   num2: number = 0;
   operation: string = "+";
@@ -22,25 +24,25 @@ export class CalculadoraComponent implements OnInit {
     switch (this.operation) {
       case "+":
         if (this.num2 == 0) {
-          return this.result = this.num1;
+          return this.result2 = this.num1;
 
         } else if (this.num1 == 0) {
-          return this.result = this.num2;
+          return this.result2 = this.num2;
 
         } else if (this.num1 != 0 && this.num2 != 0) {
-          return this.result = +this.num1 + +this.num2;
+          return this.result2 = +this.num1 + +this.num2;
         }
 
         break;
 
       case "-":
-        return this.result = this.num1 - this.num2;
+        return this.result2 = this.num1 - this.num2;
 
       case "*":
-        return this.result = this.num1 * this.num2;
+        return this.result2 = this.num1 * this.num2;
 
       case "/":
-        return this.result = this.num1 / this.num2;
+        return this.result2 = this.num1 / this.num2;
 
         break;
       default:
@@ -50,70 +52,93 @@ export class CalculadoraComponent implements OnInit {
 
   clearFieldOnClick(event): any {
     event.target.value = "";
-    this.result = 0;
+    this.result2 = 0;
+  }
+//#endregion
+
+  //#region cool calculator
+
+  // cool variables
+  reapeatCheck: boolean = false; // controls the checker variable
+  numChecker: boolean = false; // checks if the user is writting the 1st or 2nd number of the account
+  checker: boolean = false; // checks if the user is using the last result or not
+  operator: string = "";
+  n1: string = ""; // number 1
+  n2: string = ""; // number 2
+  result: any = 0;
+  mathTracker: string = ""; // shows the account
+
+  // shows the cool calculator
+  showCoolCalculator(): any {
+    let cool: any = document.getElementById("cool");
+    cool.classList.remove("hide");
+    let chooseCalculator: any = document.getElementById("chooseCalculator");
+    chooseCalculator.classList.add("hide");
   }
 
-  reapeatCheck: boolean = false;
-  numChecker: boolean = false;
-  checker: boolean = false;
-  operator: string = "";
-  n1: string = "";
-  n2: string = "";
-  result: any = 0;
+  // shows the ugly calculator
+  showUglyCalculator(): any {
+    let ugly: any = document.getElementById("ugly");
+    ugly.classList.remove("hide");
+    let chooseCalculator: any = document.getElementById("chooseCalculator");
+    chooseCalculator.classList.add("hide");
+  }
 
+  // does the math accounts
   doTheMath(): number | string {
     this.numChecker = false;
     this.reapeatCheck = false;
+    this.mathTracker += " =";
+
     switch (this.operator) {
       case "+":
         if (this.n2 == "0") {
-          return this.result = this.n1;
+          this.result = this.n1
+          this.n1 = this.result;
+          this.n2 = "";
+
+          return this.result;
 
         } else if (this.n1 == "0") {
-          return this.result = this.n2;
+          this.result = this.n2
+          this.n1 = this.result;
+          this.n2 = "";
+
+          return this.result;
 
         } else if (this.n1 != "0" && this.n2 != "0") {
           this.result = +this.n1 + +this.n2;
-          if (this.checker) {
-            this.numChecker = true;
-            this.n1 = this.result;
-          } else {
-            this.n1 = "";
-          }
+          this.n1 = this.result;
           this.n2 = "";
+
           return this.result;
         }
         break;
 
       case "-":
         this.result = +this.n1 - +this.n2;
-        if (this.checker) {
-          this.n1 = this.result;
-        } else {
-          this.n1 = "";
-        }
+        this.n1 = this.result;
         this.n2 = "";
-        return this.result;
 
-      case "*":
+        return this.result;
+        break;
+
+      case "×":
         this.result = +this.n1 * +this.n2;
-        if (this.checker) {
-          this.n1 = this.result;
-        } else {
-          this.n1 = "";
-        }
+        this.n1 = this.result;
+
         this.n2 = "";
         return this.result;
 
-      case "/":
+        break;
+
+      case "÷":
         this.result = +this.n1 / +this.n2;
-        if (this.checker) {
-          this.n1 = this.result;
-        } else {
-          this.n1 = "";
-        }
+        this.n1 = this.result;
         this.n2 = "";
+
         return this.result;
+
         break;
 
       default:
@@ -121,38 +146,45 @@ export class CalculadoraComponent implements OnInit {
     }
   }
 
+  // sets the numbers on each account
   setNumber(x): string {
     if (!this.numChecker) {
       if (!this.reapeatCheck) {
         this.checker = false;
         if (!this.checker) {
           this.n1 = "";
+          this.result = 0;
           this.reapeatCheck = true;
         }
       }
       this.n1 += x;
-      this.result = this.n1;
+      this.mathTracker = this.n1;
       return this.n1;
 
     } else {
       this.n2 += x;
-      this.result = this.n2;
+      this.mathTracker += this.n2;
       return this.n2;
     }
   }
 
+  // sets the operators on each account
   setOperator(x): string {
     this.numChecker = true;
     this.checker = true;
-    this.result = x;
+    this.mathTracker = this.n1;
+    this.mathTracker += " " + x + " ";
+    this.result = 0;
     return this.operator = x;
   }
 
+  // clears the accounts
   clear(): any {
     this.result = 0;
     this.n1 = "";
     this.n2 = "";
     this.operator = "";
+    this.mathTracker = "";
     this.numChecker = false;
     this.checker = false;
     this.reapeatCheck = false;
@@ -168,11 +200,11 @@ export class CalculadoraComponent implements OnInit {
   }
 
   setSplit(): string {
-    return this.setOperator("/");
+    return this.setOperator("÷");
   }
 
   setMultiply(): string {
-    return this.setOperator("*");
+    return this.setOperator("×");
   }
 
   set0(): number | string {
@@ -215,5 +247,5 @@ export class CalculadoraComponent implements OnInit {
     return this.setNumber(9);
   }
   //#endregion
-
+//#endregion
 }

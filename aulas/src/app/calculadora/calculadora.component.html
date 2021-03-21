@@ -1,14 +1,28 @@
 <body>
-  <p>level 1</p>
 
-  <input type="text" [(ngModel)]="num1" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
-  <input type="text" [(ngModel)]="num2" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
-  <input type="text" [(ngModel)]="operation" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+  <div id="chooseCalculator">
+    <h1>Ugly Calculator</h1>
+    <button (click)="showUglyCalculator()"></button>
+    <h1>Cool Calculator</h1>
+    <button (click)="showCoolCalculator()"></button>
+  </div>
 
-  <h2>result: {{result2}}</h2>
+  <div id="ugly" class="hide">
+    <p>Ugly calculator</p>
 
-  <div class="calculator">
-    <h1 class="monitor">{{result}}</h1>
+    <input type="text" [(ngModel)]="num1" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+    <input type="text" [(ngModel)]="num2" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+    <input type="text" [(ngModel)]="operation" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
+
+    <h2>result: {{result2}}</h2>
+  </div>
+
+  <div id="cool" class="hide">
+    <div class="monitorContainer">
+      <h1 class="monitor">{{result}}</h1>
+      <h1 class="mathTracker">{{mathTracker}}</h1>
+    </div>
+
     <div class="buttonContainer">
       <button (click)="set7()">7</button>
       <button (click)="set8()">8</button>
