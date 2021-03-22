@@ -1,0 +1,8 @@
+<body>
+  <select [(ngModel)]="theAnimal">
+    <option *ngFor="let animal of race">{{animal}}</option>
+  </select>
+
+
+  <app-animal [receivedAnimal]="theAnimal"></app-animal>
+</body>

@@ -9,6 +9,10 @@ import { ReadMeGenComponent } from './read-me-gen/read-me-gen.component';
 import { HomeComponent } from './home/home.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
 import { FormsModule } from '@angular/forms';
+import { EvAndRefComponent } from './ev-and-ref/ev-and-ref.component';
+import { Expirementsv2Component } from './expirementsv2/expirementsv2.component';
+import { AnimalListComponent } from './animal-list/animal-list.component';
+import { AnimalComponent } from './animal/animal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { FormsModule } from '@angular/forms';
     CalculadoraComponent,
     ReadMeGenComponent,
     HomeComponent,
-    ExperimentsComponent
+    ExperimentsComponent,
+    EvAndRefComponent,
+    Expirementsv2Component,
+    AnimalListComponent,
+    AnimalComponent
   ],
   imports: [
     BrowserModule,
