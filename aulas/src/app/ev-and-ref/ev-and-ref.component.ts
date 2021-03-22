@@ -13,12 +13,28 @@ export class EvAndRefComponent implements OnInit {
   }
 
   color: string = "default";
+  translate: number = 0;
+  shrink: number = 0;
 
+  shrinkThis(refInput: HTMLElement) {
+    this.shrink += 10;
+    refInput.style.height = this.shrink + "px";
+  }
 
-  rotator: string = "180deg";
+  translateThis(refInput: HTMLElement) {
+    if (refInput.classList.contains("translator")) {
+      refInput.classList.remove("translator");
+    } else {
+      refInput.classList.add("translator");
+    }
+  }
 
-  rotateThis(refInput:HTMLElement) {
-    refInput.style.transform = "rotate(this.rotator)";
+  rotateThis(refInput: HTMLElement) {
+    if (refInput.classList.contains("rotator")) {
+      refInput.classList.remove("rotator");
+    } else {
+      refInput.classList.add("rotator");
+    }
   }
 
   changeColor(colorX): string {

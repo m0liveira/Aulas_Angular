@@ -7,3 +7,11 @@ body {
 input {
   transition: all 350ms ease;
 }
+
+.rotator {
+  transform: rotate(360deg);
+}
+
+.translator {
+  transform: translate(500px, 500px);
+}
