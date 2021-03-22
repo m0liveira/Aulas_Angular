@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-ev-and-ref',
@@ -13,6 +13,13 @@ export class EvAndRefComponent implements OnInit {
   }
 
   color: string = "default";
+
+
+  rotator: string = "180deg";
+
+  rotateThis(refInput:HTMLElement) {
+    refInput.style.transform = "rotate(this.rotator)";
+  }
 
   changeColor(colorX): string {
     return this.color = colorX;

@@ -1,4 +1,10 @@
 <body>
-  <input type="text" [style.background]="color" (mouseenter)='changeColor("red")' (focus)='changeColor("pink")'
+  <input #refInput type="text" [style.background]="color" (mouseenter)='changeColor("red")' (focus)='changeColor("pink")'
     (blur)='changeColor("grey")' (input)='changeColor("green")' (copy)='changeColor("yellow")'>
+
+    <button (click)="rotateThis(refInput)">click me</button>
+    <button>click me</button>
+    <button >click me</button>
+
+
 </body>

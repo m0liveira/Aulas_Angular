@@ -3,3 +3,7 @@ body {
   height: auto;
   padding-top: 7vh;
 }
+
+input {
+  transition: all 350ms ease;
+}
