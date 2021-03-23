@@ -1,13 +1,13 @@
 <body>
 
-  <div id="chooseCalculator">
+  <div #chooseCalculator id="chooseCalculator">
     <h1>Ugly Calculator</h1>
-    <button (click)="showUglyCalculator()"></button>
+    <button (click)="showUglyCalculator(ugly)" (click)="hideChooseBtn(chooseCalculator)"></button>
     <h1>Cool Calculator</h1>
-    <button (click)="showCoolCalculator()"></button>
+    <button (click)="showCoolCalculator(cool)" (click)="hideChooseBtn(chooseCalculator)"></button>
   </div>
 
-  <div id="ugly" class="hide">
+  <div #ugly id="ugly" class="hide">
     <p>Ugly calculator</p>
 
     <input type="text" [(ngModel)]="num1" (input)="quickOperation()" (focus)="clearFieldOnClick($event)">
@@ -17,7 +17,7 @@
     <h2>result: {{result2}}</h2>
   </div>
 
-  <div id="cool" class="hide">
+  <div #cool id="cool" class="hide">
     <div class="monitorContainer">
       <h1 class="monitor">{{result}}</h1>
       <h1 class="mathTracker">{{mathTracker}}</h1>

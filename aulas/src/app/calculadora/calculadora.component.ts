@@ -12,6 +12,21 @@ export class CalculadoraComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // hide choose buttons
+  hideChooseBtn(chooseCalculator: HTMLElement): void {
+    chooseCalculator.classList.add("hide");
+  }
+
+  // shows the cool calculator
+  showCoolCalculator(cool: HTMLElement): any {
+    cool.classList.remove("hide");
+  }
+
+  // shows the ugly calculator
+  showUglyCalculator(ugly: HTMLElement): any {
+    ugly.classList.remove("hide");
+  }
+
   //#region ugly calculator
   // ugly variables
   num1: number = 0;
@@ -54,7 +69,7 @@ export class CalculadoraComponent implements OnInit {
     event.target.value = "";
     this.result2 = 0;
   }
-//#endregion
+  //#endregion
 
   //#region cool calculator
 
@@ -67,22 +82,6 @@ export class CalculadoraComponent implements OnInit {
   n2: string = ""; // number 2
   result: any = 0;
   mathTracker: string = ""; // shows the account
-
-  // shows the cool calculator
-  showCoolCalculator(): any {
-    let cool: any = document.getElementById("cool");
-    cool.classList.remove("hide");
-    let chooseCalculator: any = document.getElementById("chooseCalculator");
-    chooseCalculator.classList.add("hide");
-  }
-
-  // shows the ugly calculator
-  showUglyCalculator(): any {
-    let ugly: any = document.getElementById("ugly");
-    ugly.classList.remove("hide");
-    let chooseCalculator: any = document.getElementById("chooseCalculator");
-    chooseCalculator.classList.add("hide");
-  }
 
   // does the math accounts
   doTheMath(): number | string {
@@ -247,5 +246,5 @@ export class CalculadoraComponent implements OnInit {
     return this.setNumber(9);
   }
   //#endregion
-//#endregion
+  //#endregion
 }
