@@ -19,10 +19,8 @@ export class CoockiesComponent implements OnInit {
   // save cookies
   saveOnCookies(): any {
     localStorage.setItem('cookies', "accepted");
-
-    setTimeout(() => {
-      this.cookies = true;
-    }, 350);
+    
+    this.cookies = true;
   }
 
   // get cookies

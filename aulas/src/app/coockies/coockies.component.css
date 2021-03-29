@@ -12,7 +12,7 @@
   border: none;
 }
 
-div{
+div {
   position: fixed;
   bottom: -11vh;
   display: flex;
@@ -22,7 +22,7 @@ div{
   width: calc(100vw - (100vw - 100%));
   max-width: 100vw;
   height: 10vh;
-  transition: bottom 350ms ease;
+  transition: bottom 500ms ease;
 }
 
 div h1 {
@@ -31,7 +31,7 @@ div h1 {
 }
 
 div button {
-  background: #5fe655;
+  background: #59d850;
   color: #fff;
   border-radius: 0.3rem;
   font-size: 1.3rem;
@@ -51,10 +51,30 @@ div button:hover {
 }
 
 .show {
-  bottom: 0 !important;
-  transition: all 350ms ease;
+  -webkit-animation: slideUp 500ms 1 forwards;
+  animation: slideUp 500ms 1 forwards;
 }
 
-.hide{
-  display: none !important;
+.hide {
+  -webkit-animation: slideDown 500ms 1 forwards;
+  animation: slideDown 500ms 1 forwards;
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -11vh;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: -11vh;
+    display: none;
+  }
 }
