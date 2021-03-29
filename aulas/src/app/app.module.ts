@@ -13,6 +13,7 @@ import { EvAndRefComponent } from './ev-and-ref/ev-and-ref.component';
 import { Expirementsv2Component } from './expirementsv2/expirementsv2.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { AnimalComponent } from './animal/animal.component';
+import { CoockiesComponent } from './coockies/coockies.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AnimalComponent } from './animal/animal.component';
     EvAndRefComponent,
     Expirementsv2Component,
     AnimalListComponent,
-    AnimalComponent
+    AnimalComponent,
+    CoockiesComponent
   ],
   imports: [
     BrowserModule,
