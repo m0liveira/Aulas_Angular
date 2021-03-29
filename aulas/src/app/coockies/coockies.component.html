@@ -1,4 +1,4 @@
-<div class="container">
-  <h1>This website employs coockies to improve your user experience!</h1>
-  <button>Allow coockies</button>
+<div *ngIf='!cookies' ? class="show" : class="hide">
+  <h1>This website employs cookies to improve your user experience!</h1>
+  <button (click)="saveOnCookies()">Allow cookies</button>
 </div>

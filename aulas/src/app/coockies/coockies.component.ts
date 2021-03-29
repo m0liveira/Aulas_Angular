@@ -9,7 +9,25 @@ export class CoockiesComponent implements OnInit {
 
   constructor() { }
 
+  // verifica no reload
   ngOnInit(): void {
+    this.getCookies();
+  }
+
+  cookies: boolean;
+
+  // save cookies
+  saveOnCookies(): any {
+    localStorage.setItem('cookies', "accepted");
+
+    setTimeout(() => {
+      this.cookies = true;
+    }, 350);
+  }
+
+  // get cookies
+  getCookies(): any {
+    this.cookies = localStorage.getItem('cookies') == "accepted" ? true : false;
   }
 
 }

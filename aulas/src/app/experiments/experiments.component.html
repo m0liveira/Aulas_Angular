@@ -8,8 +8,8 @@
 
   <h1>Diretiva NG</h1>
 
-  <div *ngFor="let animal of animalArr">
-    <h2>{{animal}}</h2>
+  <div *ngFor="let animal of animalArr; let i = index;">
+    <h2 [ngStyle]="{'color': i%2 == 0 ? '#00ff9d' : '#00b5fd'}">{{animal}}</h2>
   </div>
 
   <app-expirementsv2 (passaInfo)="recebi($event)" [receivedName]='name'></app-expirementsv2>
