@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-expirementsv2',
@@ -9,9 +9,15 @@ export class Expirementsv2Component implements OnInit {
 
   @Input() receivedName
 
+  @Output() passaInfo = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  evClicked(): any {
+    this.passaInfo.emit("carregou no botao");
   }
 
 }

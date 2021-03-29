@@ -19,4 +19,8 @@ export class ExperimentsComponent implements OnInit {
   changeName(event): any {
     this.name = event.target.value;
   }
+
+  recebi(event): any{
+    console.log(event);
+  }
 }
