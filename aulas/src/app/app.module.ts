@@ -14,6 +14,7 @@ import { Expirementsv2Component } from './expirementsv2/expirementsv2.component'
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { AnimalComponent } from './animal/animal.component';
 import { CoockiesComponent } from './coockies/coockies.component';
+import { AnimalReaderComponent } from './animal-list/animal-reader/animal-reader.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CoockiesComponent } from './coockies/coockies.component';
     Expirementsv2Component,
     AnimalListComponent,
     AnimalComponent,
-    CoockiesComponent
+    CoockiesComponent,
+    AnimalReaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimalListComponent } from './animal-list/animal-list.component';
+import { AnimalReaderComponent } from './animal-list/animal-reader/animal-reader.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { EvAndRefComponent } from './ev-and-ref/ev-and-ref.component';
 import { ExperimentsComponent } from './experiments/experiments.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: "readMeGen", component: ReadMeGenComponent, },
   { path: "experiments", component: ExperimentsComponent, },
   { path: "events", component: EvAndRefComponent },
-  {path: "animalList", component: AnimalListComponent}
+  {path: "animalList", component: AnimalListComponent},
+  {path: "animalReader", component: AnimalReaderComponent}
 ];
 
 @NgModule({

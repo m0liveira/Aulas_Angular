@@ -1,8 +1,14 @@
 <body>
+
+  <p>Ng model --» especies</p>
   <select [(ngModel)]="theAnimal">
-    <option *ngFor="let animal of race">{{animal}}</option>
+    <option *ngFor="let breed of breeds">{{breed}}</option>
   </select>
 
-
   <app-animal [receivedAnimal]="theAnimal"></app-animal>
+
+  <p>ngFor + Classes</p>
+  <div *ngFor="let animal of animals">
+    <app-animal-reader [animalLido]='animal'></app-animal-reader>
+  </div>
 </body>

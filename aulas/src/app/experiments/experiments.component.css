@@ -4,6 +4,10 @@ body {
   padding-top: 7vh;
 }
 
+body button{
+  margin: 0 0 0 50px;
+}
+
 body p::before {
   content: "";
   display: block;

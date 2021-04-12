@@ -1,5 +1,6 @@
 import { R3TargetBinder } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Preferencias } from '../classes/preferencias';
 
 @Component({
   selector: 'app-experiments',
@@ -12,6 +13,8 @@ export class ExperimentsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  defenition: Preferencias = new Preferencias("red", "blue");
 
   animalArr: Array<string> = ["cao", "gato", "macaco", "rato esquilo"];
   name: string = "0liveira";
