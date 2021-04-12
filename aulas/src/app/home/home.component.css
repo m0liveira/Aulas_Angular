@@ -3,3 +3,12 @@ body {
   height: auto;
   padding-top: 7vh;
 }
+
+body p::before {
+  content: "";
+  display: block;
+  background-color: #00b5fd;
+  width: 99%;
+  height: 1px;
+  margin: 50px 0 10px .5%;
+}

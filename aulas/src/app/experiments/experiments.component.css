@@ -3,3 +3,26 @@ body {
   height: 91vh;
   padding-top: 7vh;
 }
+
+body p::before {
+  content: "";
+  display: block;
+  background-color: #00b5fd;
+  width: 99%;
+  height: 1px;
+  margin: 50px 0 10px 0.5%;
+}
+
+body p{
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+body p::after {
+  content: "";
+  display: block;
+  background-color: #afc5ce;
+  width: 99%;
+  height: 1px;
+  margin: 10px 0 50px 0.5%;
+}
